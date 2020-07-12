@@ -15,6 +15,12 @@
             href="./css/themes/default.css"
             id="medium-editor-theme"
         />
+        <script type="module">
+            import "https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate";
+
+            const el = document.createElement("pwa-update");
+            document.body.appendChild(el);
+        </script>
     </head>
     <body>
         <a href="https://github.com/yabwe/medium-editor" class="github-link"
@@ -137,13 +143,6 @@
                 .addEventListener("change", function () {
                     cssLink.href = "./css/" + this.value + ".css";
                 });
-        </script>
-
-        <script type="module">
-            import "https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate";
-
-            const el = document.createElement("pwa-update");
-            document.body.appendChild(el);
         </script>
     </body>
 </html>
