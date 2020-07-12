@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <title>medium editor | demo</title>
         <link rel="stylesheet" href="css/demo.css" />
+        <link rel="manifest" href="/manifest.json" />
         <link
             rel="stylesheet"
             href="https://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.css"
@@ -123,6 +124,7 @@
                 ></small
             >
         </p>
+
         <script src="./js/medium-editor.js"></script>
         <script>
             var editor = new MediumEditor(".editable", {
@@ -135,6 +137,13 @@
                 .addEventListener("change", function () {
                     cssLink.href = "./css/" + this.value + ".css";
                 });
+        </script>
+        <script src="pwabuilder-sw.js"></script>
+        <script type="module">
+            import "https://cdn.jsdelivr.net/npm/@pwabuilder/pwaupdate";
+
+            const el = document.createElement("pwa-update");
+            document.body.appendChild(el);
         </script>
     </body>
 </html>
